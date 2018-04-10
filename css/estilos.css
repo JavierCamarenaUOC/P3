@@ -177,19 +177,26 @@ footer {
 /* REDIMENSIÓN TEXTO CABECERA DISPOSITIVOS MÓVILES */
 @media only screen and (max-width: 767px) {
 	
+	html, body {
+	width: 100%;
+	height: 100%;
+	padding-left:0%;
+	padding-right:0%;
+}
+	
 	.divTitulo h1 {
-		font-size: 1.1rem;
+		font-size: 1rem;
 		font-family: "Aleo";
 	}
 	
 	.divTitulo h2 {
-		font-size: 1.1rem;
+		font-size: 1rem;
 		font-family: "Aleo";
 	}
 	
 	#barrasuperior1 {
 	position: absolute;
-	top: 21%;
+	top: 25%;
 	width: 100%;
 	height: 10px;
 	background-color: #9b000f;
@@ -198,7 +205,7 @@ footer {
 
 	#barrasuperior2 {
 	position: absolute;
-	top: 34%;
+	top: 45%;
 	width: 100%;
 	height: 10px;
 	background-color: #9b000f;
@@ -207,8 +214,8 @@ footer {
 	#barrasuperior3 {
 	position: absolute;
 	top: 75%;
-	width: 50%;
-	height: 60px;
+	width: 45%;
+	height: 25px;
 	background-color: #000000;
 	
 	}
@@ -217,10 +224,18 @@ footer {
 	position: absolute;
 	top: 55%;
 	width: 50%;
-	height: 30px;
+	height: 25px;
 	right: 0px;
 	background-color: #000000;	
 	}
+	
+	#barrasuperior5 {
+	position: absolute;
+	top: 37%;
+	width: 100%;
+	height: 20px;
+	background-color: #808080;	
+}
 	
 	.logoNewsmakers {
 	background: url(../img/logoNewsmakers_min.png);
@@ -238,6 +253,7 @@ footer {
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
+	left: 5%;
 	position: absolute;
 
 	}
@@ -245,8 +261,8 @@ footer {
 	footer {
     background-color: #000000;
     color: white;
-    padding: 15px;
-	height:230px;
+    padding: 5px;
+	height:150px;
     }
 }
 	
@@ -274,6 +290,6 @@ footer {
         padding: 15px;
       }
       .row.content {height:auto;} 
-  
+    }
 
 
