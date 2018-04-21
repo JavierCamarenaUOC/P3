@@ -44,7 +44,8 @@ header {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	left: 18%;
+	left: 2%;
+	top: 13%;
 }
 
 /*primera barra roja*/
@@ -70,7 +71,7 @@ header {
 #barrasuperior3 {
 	position: absolute;
 	top: 75%;
-	width: 42%;
+	width: 40%;
 	height: 40px;
 	background-color: #000000;	
 }
@@ -79,11 +80,15 @@ header {
 #barrasuperior4 {
 	position: absolute;
 	top: 57%;
-	width: 45%;
-	height: 35px;
+	width: 40%;
+	height: 40px;
 	right: 0px;
 	background-color: #000000;	
 }
+.divTitulo h1 {
+		font-size: 2.2rem;
+		font-family: "Aleo";
+	}
 
 /*barra gris separadora cabecera y menú*/
 #barrasuperior5 {
@@ -102,10 +107,7 @@ header {
 	transform: translate(-50%,-50%);
 	z-index:1;
 }
-	.divTitulo h1 {
-		font-size: 2.8rem;
-		font-family: "Aleo";
-	}
+
 
 /*texto we collect news*/
 .tituloWeCollectNews {
@@ -115,10 +117,6 @@ header {
 	transform: translate(-30%,-50%);
 	z-index:1;
 }
-	.divTitulo h1 {
-		font-size: 2.83rem;
-		font-family: "Aleo";
-	}
 
 
 /* fuente menú superior*/
@@ -127,48 +125,62 @@ nav.navbar ul.nav li{
 }
 
 p {
-	font-family: "Lora"
+	font-family: "Lora";
+	font-size: 1.2em;
 }
 
-p2
-{
-	font-family: "Lora Italic"
-} 
-	
-
-/*texto*/
 
 
-#texto{
-	height: 50%;
-}
-
-#texto #columna_izq{
-	width: 48%;
-	display: inline-block;
-	float: left;
-	padding-left: 10px;
-}
-
-#texto #columna_der{
-	width: 48%;
-	display: inline-block;
-	float: right;
-	padding-right: 10px;
-}
-
-/*footer*/
-footer {
-    background-color: #000000;
-    color: white;
-    padding: 15px;
-	height:38%;
+.col-sm-3{
+      height: 180px;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	  background-color: #fffbe6;
     }
+	
+	.col-sm-3 h3{
+		font-family: "Open Sans Bold";
+	}
+
+	.col-sm-3 p{
+		font-family: "Open Sans";
+		font-size: 0.9em;
+	}
+	
+.col-sm-4{
+	  height: 180px;
+	  margin-top: 20px;
+	  margin-bottom: 10px;
+	  background-color: #9b000f;
+	  
+	}
+	.col-sm-4 p{
+		font-family: "Aleo";
+		font-size: 1.3em;
+		color: #ffffff;
+		text-align: center;
+		margin-left: 3%;
+	}
+
+
+.col-sm-1{
+	  height: 200px;
+	  width: 100%;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	  background-color: #000000;
+	}
+	.col-sm-1 p{
+		font-family: "Aleo";
+		font-size: 1em;
+		color: #ffffff;	
+	}
+
 	
 .direccion_footer{
 	padding-top: 45px;
 	float:left;
-	padding-left: 200px;
+	padding-left: 160px;
 	text-align: left;
 }
 
@@ -255,15 +267,18 @@ footer {
 	height: 100%;
 	left: 5%;
 	position: absolute;
-
+	top: 20%;
 	}
 	
-	footer {
-    background-color: #000000;
-    color: white;
-    padding: 5px;
-	height:150px;
-    }
+	.direccion_footer{
+	padding-top: 5%;
+	float:left;
+	padding-left: 31%;
+	text-align: left;
+	}
+	
+
+
 }
 	
 /*estilos que vienen de bootstrap*/
@@ -275,7 +290,7 @@ footer {
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+    .row.content {height: 450px}*/
     
     /* Set gray background color and 100% height */
     .sidenav {

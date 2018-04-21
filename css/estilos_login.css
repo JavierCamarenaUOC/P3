@@ -1,0 +1,31 @@
+
+#inicio{
+	height: 70%;
+}
+
+#inicio #formulario_inicio{
+	background: linear-gradient(to bottom, white 75%, black);
+	background: -prefix-linear-gradient(top, white 75%, black);
+	margin: 0px auto;
+	margin-top: 10%;
+	border-radius: 10px 10px 10px 10px;
+	moz-border-radius: 10px 10px 10px 10px;
+	webkit-border-radius:10px 10px 10px 10px;
+	border: 1px solid #000000;
+	width: 60%;
+	padding-bottom: 7%;
+}
+
+table tr td{
+
+	padding-bottom: 2%;
+}
+
+#formulario_inicio h1{
+	padding-top: 5%;
+	padding-bottom: 20%;
+}
+
+
+
+
