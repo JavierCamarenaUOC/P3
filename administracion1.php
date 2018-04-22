@@ -25,7 +25,7 @@ if(isset($_SESSION['username']))
   
   <link rel="stylesheet" type="text/css" href="css/fonts.css" />
   <link rel="stylesheet" type="text/css" href="css/estilos.css" />
-  <link rel="stylesheet" type="text/css" href="css/estilos_administracion1.css" />
+  <link rel="stylesheet" type="text/css" href="css/estilos_administracion2.css" />
 
 
 </head>
