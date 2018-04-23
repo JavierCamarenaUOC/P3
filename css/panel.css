@@ -1,0 +1,22 @@
+.container {
+    max-width: 1000px;  
+    background-color: #9B000F;
+}
+.row {
+    background-color: black;
+    max-width: 1000px;
+}
+.col-lg4 {
+    
+}
+.col-lg-4 p img {
+    max-width: 100%;
+    height: auto;
+    border-color: blueviolet;
+    border: 5px;
+    
+}
+.container p {
+    text-align: center;
+    color: azure;
+}
