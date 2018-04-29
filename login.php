@@ -1,6 +1,5 @@
-<?php include("conexion.php"); ?>
+<?php include("conexion.php"); 
 
-<?php 
 
 //recoge los datos del formulario
 $username= $_POST["username"];
@@ -20,12 +19,11 @@ if (mysqli_num_rows($rs)!=0)
    	session_start();
 	$_SESSION['username'] = $username;
 
-   	header ("Location: index.html");	
+   	header ("Location: panel.php");	
 	}
 	else 
 	{ 
    	//si no existe reenvía a página de error
 	header("Location: erroracceso.php"); 	
 	} 
-
 ?>

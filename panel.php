@@ -65,7 +65,7 @@ session_start();
             asociadas a este usuario en la base de datos.-->
  <?php 
         if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-            $descripcion_larga=300;
+            $descripcion_larga=140;
             $num_noticias=3;
             $username=$_SESSION['username'];
             $querynoticias="SELECT * FROM noticias WHERE noticias.usuario = (SELECT codigo FROM usuario WHERE username='$username')";
@@ -111,7 +111,7 @@ session_start();
                             ?> </div> <?php
                 } ?> </section></div> <?php
 } else {
-            echo '<p>Error de acceso. Pulse Login para iniciar</p>'; 
+            echo '<p>Error de acceso. Pulse Login o Inicio para empezar.</p>'; 
 }?>
            
 		   
