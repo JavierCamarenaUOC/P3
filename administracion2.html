@@ -4,11 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NewsMakers</title>
-  <link rel="stylesheet" type="text/css" href="css/fonts.css" />
-  <link rel="stylesheet" type="text/css" href="css/estilos_administracion2.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+  <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+  <link rel="stylesheet" type="text/css" href="css/estilos_administracion2.css" />
+
 
 </head>
 <body>
@@ -41,13 +46,14 @@
 		<ul class="nav navbar-nav" >
 		  <li><a href="index.html">Presentación</a></li>
 		  <li><a href="registro.html">Inicio</a></li>
-		  <li><a href="#">Noticias</a></li>
-		  <li class="active"><a href="administracion1.html">Administración</a></li>
+		  <li><a href="panel.php">Noticias</a></li>
+		  <li class="active"><a href="administracion1.php">Administración</a></li>
 		</ul>
-		<a href="inicio.html" class="btn btn-success navbar-btn" style="float:right" role="button">Login</a>
+		<a href="login.html" class="btn btn-success navbar-btn" style="float:right" role="button">Login</a>
 	  </div>
 	</nav>
 </div>
+<section>
 <div id="inicio">
 	
 	<div class="formulario_administracion2">
@@ -75,19 +81,26 @@
 			
 	</div>
 	
-	<a href="administracion1.html" class="btn btn-danger" style="float:center" role="button">Atrás</a>
+	<a href="administracion1.php" class="btn btn-danger" style="float:center" role="button">Atrás</a>
 
 	
 </div>
-
-<footer class="container-fluid text-center">
-	<hr>
-	<div class="logoNewsmakers_gris">	
+</section>
+  <div class="row"></div>
+  
+  <!--footer-->
+  <section id="footer">
+    <div class="col-sm-1">
+		<div class="logoNewsmakers_gris">
+		<div class="direccion_footer">
+			<p>Tuset 3, Moià 1, 3ª planta 08006 Barcelona<br>(+34)934 969 200<br>contacto@newsmakers.com</p>	
+		</div>		
+		</div>
 	</div>
-	<div class="direccion_footer">
-	<p>Tuset 3, Moià 1, 3ª planta 08006 Barcelona<br>(+34)934 969 200<br>contacto@newsmakers.com</p>
+  </section>
+    
 
-</div>
-</footer>
+    <div style="display: none;"></div>
+<!-- </footer> -->
 </body>
 </html>
