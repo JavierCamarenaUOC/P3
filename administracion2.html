@@ -50,6 +50,7 @@
 		  <li class="active"><a href="administracion1.php">Administración</a></li>
 		</ul>
 		<a href="login.html" class="btn btn-success navbar-btn" style="float:right" role="button">Login</a>
+          <a href="cerrar.php" class="btn btn-danger navbar-btn" style="float:right" role="button">Logout</a>
 	  </div>
 	</nav>
 </div>
@@ -59,10 +60,10 @@
 	<div class="formulario_administracion2">
 		<h3>AÑADE RSS</h3>
 			
-				<form action="añadir_rss.php" method="post">
+				<form action="mas_rss.php" method="post">
 					URL RSS&nbsp;&nbsp;&nbsp;<input type="text" name="rss" style="text-align: center; width: 60%; margin: 0px auto;border-radius: 10px 10px 10px 10px;moz-border-radius: 10px 10px 10px 10px;webkit-border-radius:10px 10px 10px 10px;border: 1px solid #000000;">
-					<input type="submit" class="btn btn-danger" value="Cancelar" name="cancelar" style="margin-top: 9%;float: left">
-					<input type="submit" class="btn btn-success navbar-btn" value="Añadir" name="añadir" style="margin-top: 9%; margin-right: 4%; float: right">
+					<input type="reset" class="btn btn-warning" value="Limpiar" name="borrar" style="margin-top: 9%;float: left">
+					<input type="submit" class="btn btn-success navbar-btn" value="Añadir" name="mas" style="margin-top: 9%; margin-right: 4%; float: right">
 
 				</form>
 		
@@ -72,7 +73,7 @@
 	<div class="formulario_administracion2">
 			<h3>ELIMINA RSS</h3>
 		
-			<form action="eliminar_rss.php" method="post">
+			<form action="menos_rss.php" method="post">
 					SELECCIONA RSS&nbsp;&nbsp;&nbsp;<input type="text" name="rss" style="text-align: center; width: 60%; margin: 0px auto;border-radius: 10px 10px 10px 10px;moz-border-radius: 10px 10px 10px 10px;webkit-border-radius:10px 10px 10px 10px;border: 1px solid #000000;">
 					<input type="submit" class="btn btn-danger" value="Cancelar" name="cancelar" style="margin-top: 9%;float: left">
 					<input type="submit" class="btn btn-success navbar-btn" value="Eliminar" name="eliminar" style="margin-top: 9%; margin-right: 4%; float: right">

@@ -63,6 +63,10 @@ if(isset($_SESSION['username']))
 		  <li class="active"><a href="administracion1.php">Administración</a></li>
 		</ul>
 		<a href="login.html" class="btn btn-success navbar-btn" style="float:right" role="button">Login</a>
+          <?php if (isset($_SESSION['username']) && !empty($_SESSION['username'])) { ?>
+        <a href="cerrar.php" class="btn btn-danger navbar-btn" style="float:right" role="button">Logout</a>
+<?php }
+    ?>
 
 	  </div>
 	</nav>
