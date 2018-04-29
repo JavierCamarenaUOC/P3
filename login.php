@@ -1,5 +1,6 @@
 <?php include("conexion.php"); 
 
+
 //recoge los datos del formulario
 $username= $_POST["username"];
 $password= $_POST["password"];
