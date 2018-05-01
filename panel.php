@@ -77,7 +77,7 @@ session_start();
             // Si no tiene noticias favoritas se le asignan las de ejemplo.
             // Por tanto, siempre tendrá algo que cargar.
             $news->execute();
-            $news->bind_result($idnoticias, $pais, $nombre, $categoria, $link, $fecha, $usuario, $descripcion);
+            $news->bind_result($idnoticias, $pais, $nombre, $categoria, $link, $usuario, $descripcion);
             ?> <div class="container"> 
                 <section><?php
            //Con este contador cambiamos de fila cada 3 noticias, para ello usamos un boolean de control.
