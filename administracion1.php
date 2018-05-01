@@ -120,4 +120,3 @@ if(isset($_SESSION['username']))
 		echo "Acceso denegado";
 	}
 
-?>
