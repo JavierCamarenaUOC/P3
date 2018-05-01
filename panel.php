@@ -73,18 +73,108 @@ session_start();
             $username=$_SESSION['username'];
             $querynoticias="SELECT * FROM noticias WHERE noticias.usuario = (SELECT codigo FROM usuario WHERE username='$username')";
             // echo $querynoticias;
+           
+            ?> <div id="formulario_administracion">
+    <form action="panel.php" method="post" name="filtro">
+        <?php $querypais="SELECT DISTINCT pais FROM noticias";
+            $querynombre="SELECT DISTINCT nombre FROM noticias";
+            $querycategoria="SELECT DISTINCT categoria FROM noticias";
+            $conectpais=$conectar->prepare($querypais);
+        $conectpais->execute();
+            $conectpais->bind_result($pais2);
+        ?> <center><table><tr><td>
+        <select name="pais">
+            <option value="" selected>Filtro por país</option>
+        <?php 
+while ($conectpais->fetch()) {   
+?> 
+          <option value="<?php echo $pais2?>"><?php echo $pais2?></option> 
+          <?php 
+}  
+            $conectpais->close(); 
+            ?> </select>
+        </td>
+        <td><?php $conectnombre=$conectar->prepare($querynombre);
+            $conectnombre->execute();
+            $conectnombre->bind_result($nombre2);
+            ?> <select name="nombre">
+            <option value="" selected>Filtro por nombre</option>
+            <?php
+while ($conectnombre->fetch()) {
+    ?>
+            <option value="<?php echo $nombre2?>"><?php echo $nombre2?></option>
+            <?php
+}
+            $conectnombre->close();
+            ?>
+            </select>
+        </td>
+        <td><?php $conectcategoria=$conectar->prepare($querycategoria);
+            $conectcategoria->execute();
+            $conectcategoria->bind_result($categoria2);
+            ?> <select name="categoria">
+            <option value="" selected>Filtro por categoría</option>
+            <?php
+while ($conectcategoria->fetch()) {
+    ?>
+            <option value"<?php echo $categoria2?>"><?php echo $categoria2?></option>
+            <?php
+}
+            $conectcategoria->close();
+            ?>
+            </select>
+        
+        </td>
+        <td>
+        <input type="submit" class="btn btn-success navbar-btn" value="Actualizar Filtro" name="actualizar" style="margin-top: 9%; margin-right: 4%; float: right">
+        </td>
+        </tr></table></center></form>
+    </div>
+    <?php 
             $news=$conectar->prepare($querynoticias);
             // Si no tiene noticias favoritas se le asignan las de ejemplo.
             // Por tanto, siempre tendrá algo que cargar.
             $news->execute();
-            $news->bind_result($idnoticias, $pais, $nombre, $categoria, $link, $usuario, $descripcion);
-            ?> <div class="container"> 
+            $news->bind_result($idnoticias, $pais, $nombre, $categoria, $link, $usuario, $descripcion); 
+    ?>
+                <div class="container"> 
                 <section><?php
            //Con este contador cambiamos de fila cada 3 noticias, para ello usamos un boolean de control.
                     $contador=0;
                     $salir=false;
-                while ($news->fetch()) {
-                    //Sentencia temporal hasta que se implementen los filtros.
+            //Si hay filtro activado con esto sabemos si la noticia se publica o no
+            $publicar=true;
+            while ($news->fetch()) {
+                $publicar=true;
+                  if (!empty($_POST["actualizar"])) {
+                if(isset($_POST["pais"])){
+                $country=$_POST["pais"];
+                    //echo "pais copiado".$country."=".$pais;
+                }
+                if(isset($_POST["nombre"])){
+                $name=$_POST["nombre"];
+                    //echo "nombre copiado".$name."=".$nombre;
+                }
+                if(isset($_POST["categoria"])){
+                $category=$_POST["categoria"];
+                    //echo "categoria copiada".$category."=".$categoria;
+                }
+                if (!empty($country) && !($country==$pais)) {
+                    $publicar=false;
+                    //echo "<br><p>".$publicar."</p>";
+                }
+                if (!empty($name) && !($name==$nombre)) {
+                    $publicar=false;
+                    //echo "<br><p>".$publicar."</p>";
+                }
+                if (!empty($category)&& !($category==$categoria)) {
+                    $publicar=false;
+                    //echo "<br><p>".$publicar."</p>";
+                }
+            }
+            
+if ($publicar) {
+                    //*ponemos identificador al canal
                     $filtro=$categoria;
                     //Ponemos a 0 el número de noticias
                     $n=0;
@@ -125,8 +215,10 @@ session_start();
                                  $salir=false;
                                  $contador=0;
                              }
+                }
                 } ?> </section></div> <?php
-} else {
+
+                } else {
             echo '<p>Error de acceso. Pulse Login o Inicio para empezar.</p>'; 
 }?>
            
