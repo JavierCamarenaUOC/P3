@@ -2,21 +2,29 @@
     max-width: 1000px;  
     background-color: #9B000F;
 }
+.container p {
+    text-align: center;
+    color: whitesmoke;
+}
 .row {
     background-color: black;
     max-width: 1000px;
 }
-.col-lg4 {
-    
-}
-.col-lg-4 p img {
+.col-lg-4 {
     max-width: 100%;
     height: auto;
     border-color: blueviolet;
     border: 5px;
     
 }
-.container p {
-    text-align: center;
-    color: azure;
+.col-lg-4 span {
+    max-width: 100%;
+    height: auto;
+    color: white;
+    border: 5px;
+    
+}
+[src] {
+    max-width: 100%;
+    height: auto;
 }

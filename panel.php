@@ -63,14 +63,13 @@ session_start();
 	</div>
 	</section>
 
-	<!--Noticias a gogo. Primero consultamos las noticias favoritas del usuario introducido, si no tiene ninguna ofrecemos cinco de ejemplo-->
+	<!--Noticias a gogo. Primero consultamos las noticias favoritas del usuario introducido, si no tiene ninguna ofrecemos tres de ejemplo-->
 	
-	   <!--Capturamos la variable de sesión y buscamos noticias
-            asociadas a este usuario en la base de datos.-->
+	   <!--Capturamos la variable de sesión y buscamos noticias asociadas a este usuario en la base de datos.-->
  <?php 
         if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-            $descripcion_larga=140;
-            $num_noticias=3;
+            $descripcion_larga=200;
+            $num_noticias=1;
             $username=$_SESSION['username'];
             $querynoticias="SELECT * FROM noticias WHERE noticias.usuario = (SELECT codigo FROM usuario WHERE username='$username')";
             // echo $querynoticias;
@@ -81,14 +80,17 @@ session_start();
             $news->bind_result($idnoticias, $pais, $nombre, $categoria, $link, $fecha, $usuario, $descripcion);
             ?> <div class="container"> 
                 <section><?php
+           //Con este contador cambiamos de fila cada 3 noticias, para ello usamos un boolean de control.
+                    $contador=0;
+                    $salir=false;
                 while ($news->fetch()) {
                     //Sentencia temporal hasta que se implementen los filtros.
                     $filtro=$categoria;
                     //Ponemos a 0 el número de noticias
                     $n=0;
-                    ?><div><?php
-                    echo '<p>'.$filtro.'</p>';
-                    ?></div> <div class="row"> <?php
+                    if ($contador==0) {
+                        ?> <div class="row"> <?php
+                    }
                     if ($noticias=simplexml_load_file($link)) {
                         // echo '<p>Carga correcta RSS:'.$link.'</p>';
                     } else {
@@ -98,8 +100,14 @@ session_start();
                         foreach ($noticia as $reg) {
                             if ($reg->title!=NULL && $reg->title!='' && $reg->description!=NULL && $reg->description!='' && $n<$num_noticias) {
                                 ?><div class="col-lg-4"><?php
+                                echo "<span>".$filtro."</span>";
                                 // echo 'Entro en el bucle'.$n;
+                                $contador++;
                                 $n++;
+                                if ($contador==3) {
+                                    $salir=true;
+                                    
+                                }
                                 echo '<h4><a href="'.$reg->link.'" target="_blank">'.$reg->title.'</a></h4>';
                                 if (strlen($reg->description)>$descripcion_larga) {
                                     echo '<p>'.substr($reg->description,0,$descripcion_larga).'...</p>';
@@ -112,7 +120,11 @@ session_start();
                             
                             }
                         }
-                            ?> </div> <?php
+                             if ($salir) {
+                                ?></div><?php
+                                 $salir=false;
+                                 $contador=0;
+                             }
                 } ?> </section></div> <?php
 } else {
             echo '<p>Error de acceso. Pulse Login o Inicio para empezar.</p>'; 
