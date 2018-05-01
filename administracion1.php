@@ -88,7 +88,7 @@ if(isset($_SESSION['username']))
 			
 	</div>
 	
-	<a href="administracion2.html" class="btn btn-success navbar-btn" style="float:center" role="button">Siguiente</a>
+	<a href="administracion2.php" class="btn btn-success navbar-btn" style="float:center" role="button">Actualizar RSS</a>
 
 	
 </section>
