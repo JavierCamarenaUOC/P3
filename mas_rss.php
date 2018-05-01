@@ -30,7 +30,7 @@ if ($canal=simplexml_load_file($enlace_rss)) {
     echo "<p>Canal añadido con éxito".$volver3;
     } else {
         echo "<p>No ha sido posible grabar el canal en la base de datos.".$volver3;
-        echo $query;
+        // echo $query;
     }
     
 } else {
